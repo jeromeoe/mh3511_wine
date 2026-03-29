@@ -9,6 +9,7 @@ for (col in numeric.cols){
   qqnorm(attribute, main = paste('Q-Q Plot:', col))
   qqline(attribute, col ='red',lwd = 2)
 }
+ggsave("reports/figures/QQ_plot.png")
 
 for (col in numeric.cols) {
   attribute = wine_data[[col]]
@@ -22,4 +23,8 @@ for (col in numeric.cols) {
   qqnorm(sample_means, main = paste("Q-Q Plot of sample means:", col),cex.main = 0.8) #change title font size
   qqline(sample_means, col = "red", lwd = 2)
 }
-par(mfrow=c(1,1))
+ggsave("reports/figures/QQ_plot_Sample_Means.png")
+
+par(mfrow=c(1,1)) # resets plot dimensions
+
+
