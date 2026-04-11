@@ -48,7 +48,7 @@ ggsave("reports/figures/alcohol_boxplot_split.png", plot = p2, width = 8, height
 
 # 3. Scatterplot Matrix of Key Chemical Properties
 # Select a subset of variables to keep the plot readable
-key_vars <- wine_data %>% select(alcohol, pH, citric.acid, volatile.acidity, quality_group, type)
+key_vars <- wine_data %>% select(alcohol, fixed.acidity, citric.acid, volatile.acidity, quality_group, type)
 p3 <- ggpairs(key_vars,
   columns = 1:4,
   aes(color = type, alpha = 0.5),
